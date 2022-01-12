@@ -1,5 +1,227 @@
+:root{
+
+    --mainFont: 'Roboto', sans-serif;
+    --secondaryFont: 'Roboto Condensed', sans-serif;
+    --primaryColor: #1B90FC;
+    --white: white;
+    --black1: #202020;
+    
+}
+
+body {
+    font-family: var(--mainFont);
+    margin:0;
+    color: var(--white)
+}
+
 html {
     font-size: 62.5%;
 }
+.wrapper {
+   
+    margin: auto;
+    /* overflow: hidden; */
+ 
+}
+
+p,h1 {
+    margin:0;
+}
+
+.loki-tablet-img {
+    display: none;
+}
+
+.logo-desktop {
+    display: none;
+}
+
+.card {
+    max-width: 360px;
+    display: flex;
+    flex-direction: row;
+}
+
+.hero-content {
+    background: var(--black1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
 
 
+   
+.hero {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 128px), 0 100%);
+ 
+
+}
+.loki-mobile h1 {
+    font-size: 2.4rem;
+    line-height: 24px;
+    padding-block-start: 20px;
+    
+}
+
+.loki-mobile p {
+    font-size: 1.4rem;
+    line-height: 24px;
+    padding-block-start: 10px;
+}
+
+.data {
+    padding-block: 16px;
+    padding-inline: 16px; 
+    
+    
+}
+
+.loki-mobile-img{
+  
+    width: 360px;
+}
+
+button {
+    background-color: var(--primaryColor);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 16px;
+    margin-block-start: 20px;
+    padding-block: 16px;
+    border:none;
+    border-radius: 50px;
+    width: 312px;
+}
+
+@media screen and (min-width:740px){
+    
+
+    button {
+        width: 640px;
+    }
+    
+   .loki-mobile-img {
+    width: 640px;
+   }
+   
+   .hero-content {
+       position:relative;
+   }
+
+   .card {
+       position: absolute;
+       left:10%;
+   }
+
+   .hero {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 28px), 0 100%);
+    }
+}
+@media screen and (min-width:930px){
+    
+
+    .hero h1 {
+        font-family: var(--secondaryFont);
+        font-size: 4rem;
+        margin-block-end: 8px;
+    }
+
+    .hero p {
+        font-size: 1.6rem;
+        line-height: 24px;
+        margin-block-end: 24px;
+    }
+
+    .loki-mobile-img {
+        display: none;
+    }
+
+    .loki-logo-mobile {
+        display: none;
+    }
+    
+
+    img {
+        max-inline-size: 100%;
+    }
+
+    button {
+        width: 150px;
+    }
+
+    .hero-content {
+        block-size: 768px;
+        display: flex;
+        flex-direction: row;
+        /* flex-direction: column; por default, la direccion es en rows, pero si se cambia el sentido, el align items se pasa al eje vertical */
+        align-items: center;
+        background: none;
+        
+    }
+
+    .data {
+        padding-block: 0;
+        padding-inline: 0; 
+        
+        
+    }
+
+    .card {
+        max-inline-size: 412px;
+        color:var(--white);
+        z-index: 2;
+    position: relative;
+    padding-inline-start: 0;
+    }
+
+   
+    .hero::before {
+        content: '';
+        inline-size: 50%;
+        display: block;
+    /* block-size: 100%;*/
+        background: var(--black1);
+        position: absolute;
+        inset-block: 0;
+        z-index: 1;
+        clip-path: polygon(0 0,calc(100% - 151px) 0, 100% 100%, 0 100%);
+    }
+
+
+    .hero {
+        background: url(../images/loki-desktop1.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: var(--black1);
+        position: relative;
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 128px), 0 100%);
+
+    }
+
+}
+
+
+
+@media screen and (min-width:1440px) {
+
+    .hero {
+        background: url(../images/loki-desktop2.jpg);
+    }
+
+    button {
+        width: 158px;
+    }
+
+   
+}
+
+@media screen and (min-width:1920px) {
+
+    .hero {
+        background: url(../images/loki-desktop3.jpg);
+    }
+
+    
+}
